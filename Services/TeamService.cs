@@ -1,3 +1,4 @@
+using System;
 using MatchupMashup.Models;
 
 namespace MatchupMashup.Services
@@ -6,22 +7,17 @@ namespace MatchupMashup.Services
     {
         public void DisplayTeamInfo(Team team)
         {
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine($"Team: {team.Name}");
+            Console.WriteLine($"Wins: {team.Wins}, Losses: {team.Losses}");
+            Console.WriteLine($"Win Rate: {team.WinRate:P2}");
         }
 
         public Team CreateTeam(string name, string abbreviation, string conference, string division, int wins, int losses)
         {
             return new Team
-            {
-                Name = name,
-                Abbreviation = abbreviation,
-                Conference = conference,
-                Division = division,
-                Wins = wins,
-                Losses = losses
-            };
+            (
+                name,abbreviation,conference,division,wins,losses
+            );
             
         }
     }

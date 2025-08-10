@@ -5,7 +5,7 @@ namespace MatchupMashup.Models
     public class Team // Class definition
     { // __init__ method (getters and setters)
         public string Name { get; set; }
-        public string Abreviation { get; set; }
+        public string Abbreviation { get; set; }
         public string Conference { get; set; }
         public string Division { get; set; }
         public int Wins { get; set; }
@@ -27,7 +27,7 @@ namespace MatchupMashup.Models
         double avgPointsScored = 0, double avgPointsAllowed = 0)
         {
             Name = name;
-            Abreviation = abreviation;
+            Abbreviation = abreviation;
             Conference = conference;
             Division = division;
             Wins = wins;

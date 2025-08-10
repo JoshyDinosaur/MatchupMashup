@@ -12,3 +12,4 @@
 /Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.pdb
 /Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.genruntimeconfig.cache
 /Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/ref/MatchupMashup.dll
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.sourcelink.json

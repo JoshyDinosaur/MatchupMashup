@@ -1,5 +1,6 @@
 ﻿using System;
 using MatchupMashup.Models;
+using MatchupMashup.Services;
 
 namespace MatchupMashup
 {
@@ -7,12 +8,16 @@ namespace MatchupMashup
     {
         static void Main(string[] args)
         {
-            Team broncos = new Team("Denver Broncos", "DEN", "AFC", "West", 10, 7);
-            Team bengals = new Team("Cincinatti Bengals", "CIN", "AFC", "North", 9, 8);
+            var teamService = new TeamService();
+
+            Team broncos = teamService.CreateTeam("Denver Broncos", "DEN", "AFC", "West", 10, 7);
+            Team bengals = teamService.CreateTeam("Cincinatti Bengals", "CIN", "AFC", "North", 9, 8);
 
             // Display team info
-            Console.WriteLine($"Broncos Win Rate: {broncos.WinRate:P1}");
-            Console.WriteLine($"Benglas Win Rate: {bengals.WinRate:P1}");
+            Console.WriteLine("===Team Info===");
+            teamService.DisplayTeamInfo(broncos);
+            Console.WriteLine("===Team Info===");
+            teamService.DisplayTeamInfo(bengals);
             
 
             // Wait for user before closing
