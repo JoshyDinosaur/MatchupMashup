@@ -37,7 +37,16 @@ namespace MatchupMashup.Models
             TotalGames = wins + losses;
 
         }
+        // Team Class Methods below here
 
-        
+        public void RecordWin()
+        {
+            Wins++;
+        }
+        public void RecordLoss()
+        {
+            Losses++;
+        }
+
     }
 }
