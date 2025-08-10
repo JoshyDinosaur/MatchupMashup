@@ -1,0 +1,14 @@
+/Users/joshuadillard/MatchupMashup/bin/Debug/net9.0/MatchupMashup
+/Users/joshuadillard/MatchupMashup/bin/Debug/net9.0/MatchupMashup.deps.json
+/Users/joshuadillard/MatchupMashup/bin/Debug/net9.0/MatchupMashup.runtimeconfig.json
+/Users/joshuadillard/MatchupMashup/bin/Debug/net9.0/MatchupMashup.dll
+/Users/joshuadillard/MatchupMashup/bin/Debug/net9.0/MatchupMashup.pdb
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.AssemblyInfoInputs.cache
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.AssemblyInfo.cs
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.csproj.CoreCompileInputs.cache
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.dll
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/refint/MatchupMashup.dll
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.pdb
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/MatchupMashup.genruntimeconfig.cache
+/Users/joshuadillard/MatchupMashup/obj/Debug/net9.0/ref/MatchupMashup.dll
