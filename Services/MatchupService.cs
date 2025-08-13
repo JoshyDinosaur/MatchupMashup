@@ -5,6 +5,30 @@ using MatchupMashup.Models;
 {
     public class MatchupService
     {
+        private readonly List<Matchup> _matchups = new();
+
+        // Create a matchup and store it
+        public Matchup CreateMatchup(Team teamA, Team teamB)
+        {
+            var matchup = new Matchup(teamA, teamB);
+            _matchups.Add(matchup);
+            return matchup;
+        }
+
+        // Record the result of a matchup
+        public void RecordResuld(Matchup matchup, Team winner)
+        {
+            if (winner != matchup.TeamA && winner != matchup.TeamB)
+            {
+                throw new ArgumentException("Winner must be one of the teams in the matchup.");
+            }
+            matchup.Winner = winner;
+        }
+
+        public List<Matchup> GetAllMactchups()
+        {
+            return _matchups;
+        }
         // Predict winner using simple rule for now    
         public Team PredictWinner(Matchup matchup)
         {
