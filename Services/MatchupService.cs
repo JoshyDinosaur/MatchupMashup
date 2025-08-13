@@ -16,7 +16,7 @@ using MatchupMashup.Models;
         }
 
         // Record the result of a matchup
-        public void RecordResuld(Matchup matchup, Team winner)
+        public void RecordResult(Matchup matchup, Team winner)
         {
             if (winner != matchup.TeamA && winner != matchup.TeamB)
             {
@@ -40,10 +40,6 @@ using MatchupMashup.Models;
                 return matchup.TeamB;
             else
                 return matchup.TeamA;
-        }
-        public void RecordWinner(Matchup matchup, Team winner)
-        {
-            matchup.Winner = winner;
         }
     }
 }
