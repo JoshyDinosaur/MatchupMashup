@@ -12,12 +12,22 @@ namespace MatchupMashup.Services
             Console.WriteLine($"Win Rate: {team.WinRate:P2}");
         }
 
-        public Team CreateTeam(string name, string abbreviation, string conference, string division, int wins, int losses)
+        public Team CreateTeam(string name, string abbreviation, string conference, string division, string stadium, string city,
+        int wins, int losses, double avgpointsscored,double avgpointsallowed)
         {
             return new Team
-            (
-                name,abbreviation,conference,division,wins,losses
-            );
+            {
+                Name = name,
+                Abbreviation = abbreviation,
+                Conference = conference,
+                Division = division,
+                Stadium = stadium,
+                City = city,
+                Wins = wins,
+                Losses = losses,
+                AveragePointsScored = avgpointsscored,
+                AveragePointsAllowed = avgpointsallowed
+            };
             
         }
     }
