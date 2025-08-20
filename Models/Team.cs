@@ -5,6 +5,8 @@ namespace MatchupMashup.Models
 {
     public class Team // Class definition
     { // __init__ method (getters and setters)
+        public int Id { get; set; }
+
         public string Name { get; set; }
         public string Abbreviation { get; set; }
         public string Conference { get; set; }
