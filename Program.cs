@@ -2,6 +2,9 @@
 using System.Reflection.Metadata.Ecma335;
 using MatchupMashup.Models;
 using MatchupMashup.Services;
+using MatchupMashup.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MatchupMashup
 {
@@ -9,6 +12,21 @@ namespace MatchupMashup
     {
         static void Main(string[] args)
         {
+            // Inject EF DbContext directly into your console program so you can query
+            // or post to the database
+            var options = new DbContextOptionsBuilder<MatchupMashupDbContext>()
+            .UseNpgsql("Host=localhost;Port=5432;Database=matchupmashup;Username=postgres;Password=98520Jwd")
+            .Options;
+
+            using var context = new MatchupMashupDbContext(options);
+
+            // Example: add a team
+            var team = new Team("Eagles", "PHI", "NFC", "EAST", "Lincoln Financial Field", "Philadelphia", 15, 2, 28.1, 19.2);
+            context.Teams.Add(team);
+            context.SaveChanges();
+
+            Console.WriteLine("Team saved to PostgreSQL!");
+
             // Create the service
             var matchupService = new MatchupService();
 
