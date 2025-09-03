@@ -1,0 +1,9 @@
+public class ExternalPlayerStats
+{
+    public int touchdowns { get; set; }
+    public int passing_yards { get; set; }
+    public int rushing_yards { get; set; }
+    public int receiving_yards { get; set; }
+    public string season { get; set; }
+    public int games_played { get; set; }
+}

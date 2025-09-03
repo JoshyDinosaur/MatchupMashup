@@ -1,0 +1,27 @@
+public class ProFootballReferenceScraper
+{
+    public async Task<List<Team>> ScrapeAllTeamsAsync()
+    {
+        var teams = new List<Team>();
+
+        // Scrape each team's page
+        foreach (var abbreviation in GetAllTeamAbbreviations())
+        {
+            var teamURL = $"https://www.pro-football-reference.com/teams/{abbreviation}/";
+            var html = await FetchHtmlAsync(teamURL);
+            var team = ParseTeamFromHtml(html, abbreviation);
+            teams.Add(team);
+
+            // Respect rate limits
+            await Task.Delay(1000);
+        }
+
+        return teams;
+    }
+
+    private Team ParseTeamFromHtml(string html, string abbreviation)
+    {
+        // Use HTML parsing Library (like HtmlAgilityPack)
+        // Extract team information from the HTML
+    }
+}
