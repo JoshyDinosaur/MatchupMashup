@@ -2,6 +2,7 @@ public interface INFLDataService
 {
     Task<List<Team>> FetchAllTeamsAsync();
     Task<List<Player>> FetchTeamPlayersAsync(string teamAbbreviation);
+    Task<Team> FetchTeamAsync(string teamAbbreviation);
     Task<List<PlayerStats>> FetchPlayerStatsAsync(string playerID);
     Task<List<GameResult>> FetchRecentGamesAsync();
 

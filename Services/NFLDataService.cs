@@ -21,4 +21,17 @@ namespace MatchupMashup.Services
             _httpClient.DefaultRequestHeaders.Add("User-Agent", _config.UserAgent);
         }
     }
+
+    public class Task<List<Teams>> FetchAllTeamsAsync()
+    {
+        _logger.LogInformation('Starting to fetch all NFL teams...');
+        try
+        {
+
+        }
+        catch
+        {
+            
+        }
+    }
 }
