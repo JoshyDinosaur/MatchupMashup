@@ -5,4 +5,5 @@ public class NFLDataConfig
     public int RequestDelayMs { get; set; } = 1000;
     public int MaxRetries { get; set; } = 3;
     public string UserAgent { get; set; } = "MatchupMashup/1.0";
+    public int TimeoutSeconds { get; set; } = 30;
 }

@@ -4,13 +4,14 @@ using MatchupMashup.Models;
 using MatchupMashup.Services;
 using MatchupMashup.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 
 namespace MatchupMashup
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             // Inject EF DbContext directly into your console program so you can query
             // or post to the database
@@ -29,6 +30,18 @@ namespace MatchupMashup
 
             // Create the service
             var matchupService = new MatchupService();
+
+            var nflDataService = new NFLDataService(
+                new HttpClient(),
+                new ConsoleLogger(), //Simple logger for console app
+                new NFLDataConfig()
+            );
+
+            // Test the service
+            Console.WriteLine("Testing NFL Data Service...");
+            var teams = await nflDataService.FetchAllTeamsAsync();
+            Console.WriteLine($"Fetched {teams.Count} teams from Pro Football Reference");
+
 
             // Create some example teams
             var teamA = new Team("Eagles", "PHI", "NFC", "East", "Lincoln Financial Field", "Philadelphia", 15, 2, 28.1, 19.2);
