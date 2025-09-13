@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatchupMashup")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b82d890cd6b127b50f6694acc487c81ae17a2b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ed5f40b6d1af8a63c3ab04ced676420827226ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatchupMashup")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatchupMashup")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
