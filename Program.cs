@@ -11,9 +11,14 @@ namespace MatchupMashup
 {
     class Program
     {
-        static async Task Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            // Inject EF DbContext directly into your console program so you can query
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+
+            """
             // or post to the database
             var options = new DbContextOptionsBuilder<MatchupMashupDbContext>()
             .UseNpgsql("Host=localhost;Port=5432;Database=matchupmashup;Username=postgres;Password=98520Jwd")
@@ -61,7 +66,8 @@ namespace MatchupMashup
             foreach (var player in teamA.Players)
             {
                 Console.WriteLine($"#{player.Number} {player.Name} - {player.Position}");
-            }
+            } 
+            """;
         }
     }
 }
