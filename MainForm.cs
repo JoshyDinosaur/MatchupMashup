@@ -10,8 +10,11 @@ namespace MatchupMashup
     public partial class MainForm : Form
     {
         /// <summary>
-        /// This is your current form clast that defines your form's structure.
+        /// This is your current form class that defines your form's structure.
         /// </summary>
+        private MatchupMashupDbContext? _context;
+        private NFLDataService? _nflDataService;
+        private MatchupService? _matchupService;
 
         public MainForm()
         {
@@ -45,8 +48,8 @@ namespace MatchupMashup
         {
             // Example: add a team
             var team = new Team("Eagles", "PHI", "NFC", "EAST", "Lincoln Financial Field", "Philadelphia", 15, 2, 28.1, 19.2);
-            context.Teams.Add(team);
-            context.SaveChanges();
+            _context.Teams.Add(team);
+            _context.SaveChanges();
 
             MessageBox.Show("Team saved to PostgreSQL!");
             LoadTeams(); // Refresh the DataGridView
@@ -55,7 +58,7 @@ namespace MatchupMashup
         private async void fetchNFLDataButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Testing NFL Data Service...");
-            var teams = await nflDataService.FetchAllTeamsAsync();
+            var teams = await _nflDataService.FetchAllTeamsAsync();
             MessageBox.Show($"Fetched {teams.Count} teams from Pro Football Reference");
         }
 
@@ -64,7 +67,7 @@ namespace MatchupMashup
             var teamA = new Team("Eagles", "PHI", "NFC", "East", "Lincoln Financial Field", "Philadelphia", 15, 2, 28.1, 19.2);
             var teamB = new Team("Broncos", "DEN", "AFC", "West", "Empower Field @ Mile High", "Denver", 10, 7, 24.5, 17.6);
 
-            var matchup = matchupService.CreateMatchup(teamA, teamB, new DateTime(2025, 11, 10), "Empower Field @ Mile High");
+            var matchup = _matchupService.CreateMatchup(teamA, teamB, new DateTime(2025, 11, 10), "Empower Field @ Mile High");
             MessageBox.Show($"Created matchup: {matchup}");
         }
     }
